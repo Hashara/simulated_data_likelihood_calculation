@@ -1,0 +1,33 @@
+IQ-TREE version 3.0.1 for MacOS ARM 64-bit built Sep 23 2025
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    cecs-083856 (SSE4.2, 18 GB RAM)
+Command: /Users/u7826985/Projects/GPU-utest/iqtree3/cmake-build-vanila/iqtree3 --alisim alignment_100000 -t tree_10.full.treefile -m Poisson --seqtype AA --length 100000 --redo
+Seed:    483354 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Nov 11 13:28:47 2025
+Kernel:  SSE2 - 1 threads (11 CPU cores detected)
+
+[Alignment Simulator] Executing
+ - Tree filepath: tree_10.full.treefile
+ - Length of output sequences: 100000
+ - Model: Poisson
+ - Number of output datasets: 1
+ - Number of threads: 1
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: Poisson
+
+State frequencies: (model)
+
+Model of rate heterogeneity: Uniform
+
+An alignment written to alignment_100000.phy
+Screen log file: tree_10.full.treefile.log
+[Alignment Simulator] Done
+Simulation CPU time: 5.663 sec (0h:0m:5s)
+Simulation wall-clock time: 6.337 sec (0h:0m:6s)
+
+Date and Time: Tue Nov 11 13:28:53 2025

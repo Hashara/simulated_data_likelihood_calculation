@@ -1,0 +1,77 @@
+Command:        /scratch/dx61/sa0557/iqtree2/poc_builds/ci_cd/build/openacc_v100_energy/gpulcal -s alignment_1000000.phy -te tree_1.full.treefile --seqtype AA -prefix outputncu_energy_measure_run1_tree_1_1000000_aa_openacc_v100_energy.txt
+Resources:      1 node (48 physical, 96 logical cores per node, 1 GPU per node available)
+Memory:         377 GiB per node
+Tasks:          1 process
+Machine:        gadi-gpu-v100-0105.gadi.nci.org.au
+Architecture:   x86_64
+CPU Family:     cascadelake-x
+Start time:     Fri Nov 21 11:13:02 2025
+Total time:     1 second
+Full path:      /scratch/dx61/sa0557/iqtree2/poc_builds/ci_cd/build/openacc_v100_energy
+
+Summary: gpulcal is Compute-bound in this configuration
+Compute:                                    100.0%     (0.1s) |=========|
+MPI:                                          0.0%     (0.0s) |
+I/O:                                          0.0%     (0.0s) |
+This application run was Compute-bound (based on main thread activity). A breakdown of this time and advice for investigating further is in the CPU and Accelerators sections below. 
+As very little time is spent in MPI calls, this code may also benefit from running at larger scales.
+
+CPU:
+A breakdown of the 100.0% (0.1s) CPU time:
+Scalar numeric ops:                           0.0%     (0.0s) |
+Vector numeric ops:                           0.0%     (0.0s) |
+Memory accesses:                              0.0%     (0.0s) |
+Waiting for accelerators:                    85.7%     (0.1s) |========|
+Most of the time is spent waiting for accelerators. Use asynchronous calls to overlap CPU and accelerator workloads.
+The CPU performance appears well-optimized for numerical computation. The biggest gains may now come from running at larger scales.
+
+MPI:
+A breakdown of the 0.0% (0.0s) MPI time:
+Time in collective calls:                     0.0%     (0.0s) |
+Time in point-to-point calls:                 0.0%     (0.0s) |
+Effective process collective rate:            0.00 bytes/s
+Effective process point-to-point rate:        0.00 bytes/s
+No time is spent in MPI operations. There's nothing to optimize here!
+
+I/O:
+A breakdown of the 0.0% (0.0s) I/O time:
+Time in reads:                                0.0%     (0.0s) |
+Time in writes:                               0.0%     (0.0s) |
+Effective process read rate:                  0.00 bytes/s
+Effective process write rate:                 0.00 bytes/s
+No time is spent in I/O operations. There's nothing to optimize here!
+
+Threads:
+A breakdown of how multiple threads were used:
+Computation:                                  0.0%     (0.0s) |
+Synchronization:                              0.0%     (0.0s) |
+Physical core utilization:                    0.3%            ||
+System load:                                  8.6%            ||
+No measurable time is spent in multithreaded code.
+Physical core utilization is low. Try increasing the number of processes to improve performance.
+
+Memory:
+Per-process memory usage may also affect scaling:
+Mean process memory usage:                    93.9 MiB
+Peak process memory usage:                     164 MiB
+Peak node memory usage:                       4.0%            ||
+The peak node memory usage is very low. Larger problem sets can be run before scaling to multiple nodes.
+
+Accelerators:
+A breakdown of how CUDA accelerators were used:
+GPU utilization:                              0.9%            ||
+Mean GPU memory usage:                        1.0%            ||
+Peak GPU memory usage:                        1.8%            ||
+GPU utilization is low; identify CPU bottlenecks with a profiler and offload them to the accelerator.
+The peak GPU memory usage is very low. It may be more efficient to offload a larger portion of the dataset to each device.
+
+Energy:
+A breakdown of how the 0.0074 Wh was used:
+CPU:                                         75.3%            |=======|
+Accelerators:                                24.7%            |=|
+System:                                   not supported
+Mean node power:                          not supported
+Peak node power:                              0.00 W
+The whole system energy has been calculated using the CPU and accelerator energy usage.
+System power metrics: Cray power not supported
+
