@@ -26,6 +26,6 @@ done
 for i in $(seq 1 $num_trees); do
     cd $output_dir/tree_${i}
     $iqtree_exec --alisim alignment_${num_sites}.phy -m JC -t tree_${i}.full.treefile --length $num_sites --seqtype DNA -redo
-    # $iqtree_exec --alisim alignment_${num_sites}.phy -m Poisson -t tree_${i}.full.treefile --length $num_sites --seqtype AA -redo
+    # $iqtree_exec --alisim alignment_${numsites}.phy -m Poisson -t tree_${i}.full.treefile --length $num_sites --seqtype AA -redo
     cd $output_dir
 done
