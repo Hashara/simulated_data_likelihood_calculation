@@ -1,10 +1,10 @@
 #!/bin/bash
 
 root_dir="/Users/u7826985/Projects/Nvidia/data"
-output_dir="$root_dir/test_simulations_AA"
+output_dir="$root_dir/4taxa_10_sites_DNA"
 
-num_taxa=100
-num_sites=100000
+num_taxa=4
+num_sites=10
 
 iqtree_exec="$root_dir/scripts/iqtree3"
 mkdir -p $output_dir
@@ -25,7 +25,7 @@ done
 
 for i in $(seq 1 $num_trees); do
     cd $output_dir/tree_${i}
-    # $iqtree_exec --alisim alignment_${num_sites}.phy -m JC -t tree_${i}.full.treefile --length $num_sites --seqtype DNA -redo
-    $iqtree_exec --alisim alignment_${num_sites}.phy -m Poisson -t tree_${i}.full.treefile --length $num_sites --seqtype AA -redo
+    $iqtree_exec --alisim alignment_${num_sites} -m JC -t tree_${i}.full.treefile --length $num_sites --seqtype DNA -redo
+    # $iqtree_exec --alisim alignment_${num_sites} -m Poisson -t tree_${i}.full.treefile --length $num_sites --seqtype AA -redo
     cd $output_dir
 done
